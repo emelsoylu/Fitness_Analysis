@@ -1,6 +1,14 @@
 # Fitness_Analysis
 Fitness Analysis Software
 
+
+
+
+# Dataset Description 
+We constructed a video-based human activity dataset comprising six distinct types of exercises. For each exercise type, 100 individual videos were collected, totaling 600 video samples. Pose detection was applied to each video using a landmark-based approach (e.g., MediaPipe Pose), extracting 33 body landmarks per frame. For every frame, the data consists of a class label in the first column, followed by the x, y, z, and visibility values of each of the 33 landmarks, resulting in a total of 1,325 features per row (1 class label + 33 landmarks × 4 values).
+
+Each video was processed individually and saved as a separate CSV file, where each row corresponds to a single video frame. The dataset was partitioned such that 90 videos per class (i.e., 540 videos in total) were allocated to the training set, and 10 videos per class (i.e., 60 videos) were reserved for the test set. During training, all CSV files in the training folder were concatenated into a single dataset to be used for model training.
+
 # train.py
 This Python script performs comprehensive machine learning model training and evaluation for a human activity recognition task using pose estimation data. The code loads a dataset (from 'Dataset.csv') containing body landmark features and corresponding activity labels, then systematically trains and evaluates nine different classification models (including Logistic Regression, Random Forest, SVM, KNN, and various boosting algorithms) with standardized preprocessing. Each model pipeline incorporates feature scaling and the respective classifier, with performance measured using accuracy scores on a 30% test set. The script outputs training progress and accuracy results for each algorithm before saving all trained models as pickle files with .h5 extensions for later use in activity prediction. This automated workflow allows for quick comparison of multiple classifiers' performance on the same dataset while ensuring consistent preprocessing, making it particularly useful for selecting the best-performing model for deployment in video-based activity recognition systems.
 
