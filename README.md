@@ -1,7 +1,7 @@
 # Fitness_Analysis
 Fitness Analysis Software
 
-#train.py
+# train.py
 This Python script performs comprehensive machine learning model training and evaluation for a human activity recognition task using pose estimation data. The code loads a dataset (from 'Dataset.csv') containing body landmark features and corresponding activity labels, then systematically trains and evaluates nine different classification models (including Logistic Regression, Random Forest, SVM, KNN, and various boosting algorithms) with standardized preprocessing. Each model pipeline incorporates feature scaling and the respective classifier, with performance measured using accuracy scores on a 30% test set. The script outputs training progress and accuracy results for each algorithm before saving all trained models as pickle files with .h5 extensions for later use in activity prediction. This automated workflow allows for quick comparison of multiple classifiers' performance on the same dataset while ensuring consistent preprocessing, making it particularly useful for selecting the best-performing model for deployment in video-based activity recognition systems.
 
 # predict_class.py
